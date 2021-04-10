@@ -1,0 +1,40 @@
+README DoodleJump
+
+HANDIN: (on time)
+
+DESIGN CHOICES:
+
+This DoodleJump has 6 classes.
+
+App is in charge of running the application.
+
+PaneOrganizer is the top-level object that contains the multiple panes of the 
+project and their children. The label changing based on whether Doodle has
+fallen beneath the pane and the quit button are contained here since they are 
+not part of the animation pane. BorderPane was chosen as the root node since it 
+can set different nodes to different positions. VBox was chosen as the type pane 
+for the menu pane for its vertical alignment.
+
+Game is the animation pane in charge of animating the application and handling
+key inputs. It is associated with PaneOrganizer in order to be set in the center
+of the BorderPane and to later call BorderPane's method to update the label upon
+the Doodle falling beneath the pane. The TimeLine in charge of the Doodle's 
+physics, the generation and scrolling of Platforms, and ending the
+game is contained here. The Doodle, the KeyHandler responsible for moving the 
+Doodle, and the first platform hard-coded beneath the Doodle are contained here. 
+An ArrayList has been chosen as the data structure to store generated Platforms 
+because the number of Platforms contained in this list is constantly expanding 
+and contracting. Platforms are being added to the ArrayList and graphically 
+added from the top of the pane and then removed from the ArrayList and 
+graphically removed upon passing the bottom of the pane.
+
+Doodle contains the rectangle shape to be added to the animation pane and
+relevant methods for animation.
+
+Platform contains the template, rectangle shape to be added to the animation 
+pane and relevant methods for animation.
+
+Constants contains constant values to clean up code throughout the other
+classes.
+
+KNOWN BUGS: None.
